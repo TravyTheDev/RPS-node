@@ -1,5 +1,8 @@
 document.querySelector('#button').addEventListener('click', choice)
 let result = document.querySelector('#result')
+let winOrLose = document.querySelector('#win-or-lose')
+let playerScore = document.querySelector('#player-score')
+let botScore = document.querySelector('#bot-score')
 
 async function choice(){
     const choice = document.querySelector('#choice').value
@@ -17,38 +20,35 @@ async function choice(){
         botChoice = 'scissors'
     }
     result.textContent = botChoice
-
-    // if (playerSelection === 'rock' && computerSelection === 'Scissors') {
-    //     ++playerScore;
-    //     let win = 'Ok ok, nice one. Rock smashed Scissors';
-    //     return win; 
-    // } else if (playerSelection === 'paper' && computerSelection === 'Rock') {
-    //     ++playerScore;
-    //     let win = 'Good for you! Paper covered Rock';
-    //     return win; 
-    // } else if (playerSelection === 'scissors' && computerSelection === 'Paper') {
-    //     ++playerScore;
-    //     let win = 'Solid guess. Scissors cut Paper';
-    //     return win; 
-    // } else if ((playerSelection === 'rock' && computerSelection === 'Rock') || 
-    // (playerSelection === 'paper' && computerSelection === 'Paper') || 
-    // (playerSelection === 'scissors' && computerSelection === 'Scissors')) {
-    //     let tie = 'Draw';
-    //     return tie; 
-    // } else if (playerSelection === 'rock' && computerSelection === 'Paper') {
-    //     ++computerScore;
-    //     let lose = 'Paper covered Rock. Loser!';
-    //     return lose; 
-    // } else if (playerSelection === 'paper' && computerSelection === 'Scissors') {
-    //     ++computerScore;
-    //     let lose = 'Scissors cut Paper. You are garbage!';
-    //     return lose; 
-    // } else if (playerSelection === 'scissors' && computerSelection === 'Rock') {
-    //     ++computerScore;
-    //     let lose = 'Rock broke Scissors. Yikes!';
-    //     return lose; 
-    // } else {
-    //     let error = 'Please click Rock, Paper or Scissors';
-    //     return error; 
-    // }
+    let playerScore = 0
+    let botScore = 0
+    if (choice === 'rock' && botChoice === 'scissors') {
+        playerScore.textContent = playerScore+=
+        winOrLose.textContent = 'Ok ok, nice one. Rock smashed Scissors';
+        
+    } else if (choice === 'paper' && botChoice === 'rock') {
+        playerScore.textContent = playerScore+=
+        winOrLose.textContent = 'Good for you! Paper covered Rock';
+        
+    } else if (choice === 'scissors' && botChoice === 'paper') {
+        playerScore.textContent = playerScore+=
+        winOrLose.textContent = 'Solid guess. Scissors cut Paper';
+        
+    } else if ((choice === 'rock' && botChoice === 'rock') || 
+    (choice === 'paper' && botChoice === 'paper') || 
+    (choice === 'scissors' && botChoice === 'scissors')) {
+        winOrLose.textContent = 'Draw';
+        
+    } else if (choice === 'rock' && botChoice === 'paper') {
+        botScore +=
+        winOrLose.textContent = 'Paper covered Rock. Loser!';
+        
+    } else if (choice === 'paper' && botChoice === 'scissors') {
+        botScore +=
+        winOrLose.textContent = 'Scissors cut Paper. You are garbage!';
+        
+    } else if (choice === 'scissors' && botChoice === 'rock') {
+        botScore +=
+        winOrLose.textContent = 'Rock broke Scissors. Yikes!';
+    }
 }
