@@ -1,8 +1,11 @@
 document.querySelector('#button').addEventListener('click', choice)
 let result = document.querySelector('#result')
 let winOrLose = document.querySelector('#win-or-lose')
-let playerScore = document.querySelector('#player-score')
-let botScore = document.querySelector('#bot-score')
+let userScore = document.querySelector('#player-score')
+let computerScore = document.querySelector('#bot-score')
+
+let playerScore = 0
+let botScore = 0
 
 async function choice(){
     const choice = document.querySelector('#choice').value
@@ -20,35 +23,41 @@ async function choice(){
         botChoice = 'scissors'
     }
     result.textContent = botChoice
-    let playerScore = 0
-    let botScore = 0
+    
     if (choice === 'rock' && botChoice === 'scissors') {
-        playerScore.textContent = playerScore+=
+        playerScore += 1
+        userScore.textContent = playerScore
         winOrLose.textContent = 'Ok ok, nice one. Rock smashed Scissors';
         
     } else if (choice === 'paper' && botChoice === 'rock') {
-        playerScore.textContent = playerScore+=
+        playerScore += 1
+        userScore.textContent = playerScore
         winOrLose.textContent = 'Good for you! Paper covered Rock';
         
     } else if (choice === 'scissors' && botChoice === 'paper') {
-        playerScore.textContent = playerScore+=
+        playerScore += 1
+        userScore.textContent = playerScore
         winOrLose.textContent = 'Solid guess. Scissors cut Paper';
         
     } else if ((choice === 'rock' && botChoice === 'rock') || 
     (choice === 'paper' && botChoice === 'paper') || 
     (choice === 'scissors' && botChoice === 'scissors')) {
+
         winOrLose.textContent = 'Draw';
         
     } else if (choice === 'rock' && botChoice === 'paper') {
-        botScore +=
+
+        botScore 
         winOrLose.textContent = 'Paper covered Rock. Loser!';
         
     } else if (choice === 'paper' && botChoice === 'scissors') {
-        botScore +=
+
+        botScore 
         winOrLose.textContent = 'Scissors cut Paper. You are garbage!';
         
     } else if (choice === 'scissors' && botChoice === 'rock') {
-        botScore +=
+
+        botScore 
         winOrLose.textContent = 'Rock broke Scissors. Yikes!';
     }
 }
