@@ -15,20 +15,7 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   }
-//   else if (page == '/otherpage') {
-//     fs.readFile('otherpage.html', function(err, data) {
-//       res.writeHead(200, {'Content-Type': 'text/html'});
-//       res.write(data);
-//       res.end();
-//     });
-//   }
-//   else if (page == '/otherotherpage') {
-//     fs.readFile('otherotherpage.html', function(err, data) {
-//       res.writeHead(200, {'Content-Type': 'text/html'});
-//       res.write(data);
-//       res.end();
-//     });
-//   }
+
   else if (page == '/api') {
     if('choice' in params){
       if(params['choice']== 'rock' || 'paper' || 'scissors' ){
@@ -38,18 +25,10 @@ const server = http.createServer((req, res) => {
         computerChoice: compChoice 
         }
         res.end(JSON.stringify(objToJson));
-      }//student = leon
-    //   else if(params['choice'] == 'paper'){
-    //     res.writeHead(200, {'Content-Type': 'application/json'});
-    //     let compChoice = Math.ceil(Math.random() * 3)
-    //     const objToJson = {
-    //     computerChoice: compChoice 
-    //     }
-    //     res.end(JSON.stringify(objToJson));
-    //   } 
-    //   student != leon
-    }//student if
-  }//else if
+      }
+    
+    }
+  }
   else if (page == '/css/style.css'){
     fs.readFile('css/style.css', function(err, data) {
       res.write(data);

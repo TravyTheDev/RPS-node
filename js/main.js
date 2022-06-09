@@ -6,13 +6,15 @@ async function choice(){
     const res = await fetch(`/api?choice=${choice}`)
     const data = await res.json()
     console.log(data)
-    result.textContent = data.computerChoice
-
+    
+    
+    let botChoice = ""
+    if(data.computerChoice === 1){
+        botChoice = 'rock'
+    }else if(data.computerChoice === 2){
+        botChoice = 'paper'
+    }else if(data.computerChoice === 3){
+        botChoice = 'scissors'
+    }
+    result.textContent = botChoice
 }
-// if(computerChoice === 1){
-//     return 'rock'
-// }else if(computerChoice === 2){
-//     return 'paper'
-// }else{
-//     return 'scissors'
-// }
