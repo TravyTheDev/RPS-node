@@ -47,17 +47,20 @@ async function choice(){
         
     } else if (choice === 'rock' && botChoice === 'paper') {
 
-        botScore 
+        botScore += 1
+        computerScore.textContent = botScore
         winOrLose.textContent = 'Paper covered Rock. Loser!';
         
     } else if (choice === 'paper' && botChoice === 'scissors') {
 
-        botScore 
+        botScore += 1
+        computerScore.textContent = botScore
         winOrLose.textContent = 'Scissors cut Paper. You are garbage!';
         
     } else if (choice === 'scissors' && botChoice === 'rock') {
 
-        botScore 
+        botScore += 1
+        computerScore.textContent = botScore
         winOrLose.textContent = 'Rock broke Scissors. Yikes!';
     }
 }
