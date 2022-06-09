@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
 //   }
   else if (page == '/api') {
     if('choice' in params){
-      if(params['choice']== 'rock'){
+      if(params['choice']== 'rock' || 'paper' || 'scissors' ){
         res.writeHead(200, {'Content-Type': 'application/json'});
         let compChoice = Math.ceil(Math.random() * 3)
         const objToJson = {
@@ -39,14 +39,14 @@ const server = http.createServer((req, res) => {
         }
         res.end(JSON.stringify(objToJson));
       }//student = leon
-      else if(params['choice'] == 'paper'){
-        res.writeHead(200, {'Content-Type': 'application/json'});
-        let compChoice = Math.ceil(Math.random() * 3)
-        const objToJson = {
-        computerChoice: compChoice 
-        }
-        res.end(JSON.stringify(objToJson));
-      } 
+    //   else if(params['choice'] == 'paper'){
+    //     res.writeHead(200, {'Content-Type': 'application/json'});
+    //     let compChoice = Math.ceil(Math.random() * 3)
+    //     const objToJson = {
+    //     computerChoice: compChoice 
+    //     }
+    //     res.end(JSON.stringify(objToJson));
+    //   } 
     //   student != leon
     }//student if
   }//else if
